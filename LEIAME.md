@@ -43,6 +43,10 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Class-PriorityEnum](imgs/UML-Diagram-Class-PriorityEnum.jpg)
 
+7. Criar `StatusEnum`, com 6 possíveis valores, e no pacote `api.enums`:
+
+![Image-UML-Diagram-Class-StatusEnum](imgs/UML-Diagram-Class-StatusEnum.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
