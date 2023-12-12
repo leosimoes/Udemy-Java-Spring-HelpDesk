@@ -21,7 +21,6 @@
 - Add dependency `implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'` in `build.grade`.
 - Configure `application.properties`:
 ```properties
-# management.health.mongo.enabled=false
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=local
@@ -31,6 +30,12 @@ spring.data.mongodb.database=local
 5. Create `ProfileEnum`, with 3 possible values, and in the `api.enums` package:
 
 ![Image-UML-Diagram-Class-ProfileEnum](imgs/UML-Diagram-Class-ProfileEnum.jpg)
+
+6. Add User class:
+- with attributes `id`, `email`, `password` and `profile`;
+- in the `api.entity` package;
+- annotated with `@Document` for MongoDB;
+- annotated with `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` for Lombok.
 
 
 ## References
