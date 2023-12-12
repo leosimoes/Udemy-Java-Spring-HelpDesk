@@ -28,6 +28,9 @@ spring.data.mongodb.database=local
 ```
 4. Add validator:
 - Add the dependency `implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'` in `build.grade`.
+5. Create `ProfileEnum`, with 3 possible values, and in the `api.enums` package:
+
+![Image-UML-Diagram-Class-ProfileEnum](imgs/UML-Diagram-Class-ProfileEnum.jpg)
 
 
 ## References
