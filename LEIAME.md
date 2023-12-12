@@ -33,9 +33,11 @@ spring.data.mongodb.database=local
 
 6. Adicionar classe User:
 - com atributos `id`, `email`, `password` e `profile`;
-- no pacote `api.entity`;
+- no pacote `api.entities`;
 - anotada com `@Document` para o MongoDB;
 - anotada com `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` para o Lombok.
+
+![Image-UML-Diagram-Class-User](imgs/UML-Diagram-Class-User.jpg)
 
 
 ## Referências

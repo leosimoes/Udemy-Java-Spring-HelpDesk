@@ -1,4 +1,4 @@
-package com.udemy.helpdesk.api.entity;
+package com.udemy.helpdesk.api.entities;
 
 import com.udemy.helpdesk.api.enums.ProfileEnum;
 import lombok.AllArgsConstructor;
