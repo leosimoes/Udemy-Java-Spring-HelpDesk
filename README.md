@@ -26,6 +26,8 @@ spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=local
 ```
+4. Add validator:
+- Add the dependency `implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'` in `build.grade`.
 
 
 ## References
