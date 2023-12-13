@@ -47,6 +47,14 @@ spring.data.mongodb.database=local
    
 ![Image-UML-Diagram-Class-StatusEnum](imgs/UML-Diagram-Class-StatusEnum.jpg)
 
+8. Add `Ticket` class:
+- with attributes `user`, `assignedUser`, `date`, `title`, `number`, `status`, `priority`, `description`, `image`;
+- in the `api.entities` package;
+- annotated with `@Document` for MongoDB;
+- annotated with `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` for Lombok.
+
+![Image-UML-Diagram-Class-Ticket](imgs/UML-Diagram-Class-Ticket.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
