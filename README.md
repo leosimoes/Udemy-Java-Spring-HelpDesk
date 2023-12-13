@@ -64,6 +64,14 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Class-ChangeStatus](imgs/UML-Diagram-Class-ChangeStatus.jpg)
 
+11. Create UserRepository interface
+- in the `api.repositories` package;
+- extends `MongoRepository`;
+- annotated with `@Repository`;
+- with `findByEmail` method.
+
+![Image-UML-Diagram-Interface-UserRepository](imgs/UML-Diagram-Interface-UserRepository.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
