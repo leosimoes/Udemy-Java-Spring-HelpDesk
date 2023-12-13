@@ -93,6 +93,11 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Interface-ChangeStatusRepository](imgs/UML-Diagram-Interface-ChangeStatusRepository.jpg)
 
+14. Add `UserService` interface and `UserServiceImpl` class
+- with methods `findByEmail`, `findById`, `createOrUpdate`, `delete`, `findAll`
+
+![Image-UML-Diagram-Class-Interface-UserService](imgs/UML-Diagram-Class-Interface-UserService.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
