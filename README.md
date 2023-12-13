@@ -72,6 +72,19 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Interface-UserRepository](imgs/UML-Diagram-Interface-UserRepository.jpg)
 
+12. Create `TicketRepository` interface:
+- in the `api.repositories` package;
+- extends `MongoRepository`;
+- annotated with `@Repository`;
+- with methods:
+    * `findByUserIdOrderByDateDesc`;
+    * `findByTitleIgnoreCaseContainingAndStatusAndPriorityOrderByDateDesc`;
+    * `findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc`;
+    * `findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignedUserIdOrderByDateDesc`;
+    * `findByNumber`.
+
+![Image-UML-Diagram-Interface-TicketRepository](imgs/UML-Diagram-Interface-TicketRepository.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:

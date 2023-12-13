@@ -64,13 +64,26 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Class-ChangeStatus](imgs/UML-Diagram-Class-ChangeStatus.jpg)
 
-11. Criar interface UserRepository
+11. Criar interface `UserRepository`:
 - no pacote `api.repositories`;
 - extende `MongoRepository`;
 - anotada com `@Repository`;
 - com método `findByEmail`.
 
 ![Image-UML-Diagram-Interface-UserRepository](imgs/UML-Diagram-Interface-UserRepository.jpg)
+
+12. Criar interface `TicketRepository`:
+- no pacote `api.repositories`;
+- extende `MongoRepository`;
+- anotada com `@Repository`;
+- com métodos:
+    * `findByUserIdOrderByDateDesc`;
+    * `findByTitleIgnoreCaseContainingAndStatusAndPriorityOrderByDateDesc`;
+    * `findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc`;
+    * `findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignedUserIdOrderByDateDesc`;
+    * `findByNumber`.
+
+![Image-UML-Diagram-Interface-TicketRepository](imgs/UML-Diagram-Interface-TicketRepository.jpg)
 
 
 ## Referências
