@@ -85,6 +85,14 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Interface-TicketRepository](imgs/UML-Diagram-Interface-TicketRepository.jpg)
 
+13. Criar interface `ChangeStatusRepository`:
+- no pacote `api.repositories`;
+- extende `MongoRepository`;
+- anotada com `@Repository`;
+- com método `findByTicketIdOrderByDateChangeStatusDesc`.
+
+![Image-UML-Diagram-Interface-ChangeStatusRepository](imgs/UML-Diagram-Interface-ChangeStatusRepository.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
