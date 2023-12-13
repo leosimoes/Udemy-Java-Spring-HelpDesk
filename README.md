@@ -47,13 +47,22 @@ spring.data.mongodb.database=local
    
 ![Image-UML-Diagram-Class-StatusEnum](imgs/UML-Diagram-Class-StatusEnum.jpg)
 
-8. Add `Ticket` class:
+9. Add `Ticket` class:
 - with attributes `user`, `assignedUser`, `date`, `title`, `number`, `status`, `priority`, `description`, `image`;
 - in the `api.entities` package;
 - annotated with `@Document` for MongoDB;
 - annotated with `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` for Lombok.
 
 ![Image-UML-Diagram-Class-Ticket](imgs/UML-Diagram-Class-Ticket.jpg)
+
+10. Add `ChangeStatus` class:
+- with attributes `id`, `ticket`, `userChange`, `dateChangeStatus`, `status`;
+- in the `api.entities` package;
+- annotated with `@Document` for MongoDB;
+- annotated with `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` for Lombok.
+- as a List attribute in the `Ticket` class and annotated with `@Transient`.
+
+![Image-UML-Diagram-Class-ChangeStatus](imgs/UML-Diagram-Class-ChangeStatus.jpg)
 
 
 ## References

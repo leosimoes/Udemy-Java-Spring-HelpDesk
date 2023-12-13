@@ -43,17 +43,26 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Class-PriorityEnum](imgs/UML-Diagram-Class-PriorityEnum.jpg)
 
-7. Criar `StatusEnum`, com 6 possíveis valores, e no pacote `api.enums`:
+8. Criar `StatusEnum`, com 6 possíveis valores, e no pacote `api.enums`:
 
 ![Image-UML-Diagram-Class-StatusEnum](imgs/UML-Diagram-Class-StatusEnum.jpg)
 
-8. Adicionar classe `Ticket`:
+9. Adicionar classe `Ticket`:
 - com atributos `user`, `assignedUser`, `date`, `title`, `number`, `status`, `priority`, `description`, `image`;
 - no pacote `api.entities`;
 - anotada com `@Document` para o MongoDB;
 - anotada com `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` para o Lombok.
 
 ![Image-UML-Diagram-Class-Ticket](imgs/UML-Diagram-Class-Ticket.jpg)
+
+10. Adicionar classe `ChangeStatus`:
+- com atributos `id`, `ticket`, `userChange`, `dateChangeStatus`, `status`;
+- no pacote `api.entities`;
+- anotada com `@Document` para o MongoDB;
+- anotada com `@Data`, `@NoArgsConstructor`, `@AllArgsConstructor` para o Lombok.
+- como atributo List na classe `Ticket` e anotada com `@Transient`.
+
+![Image-UML-Diagram-Class-ChangeStatus](imgs/UML-Diagram-Class-ChangeStatus.jpg)
 
 
 ## Referências
