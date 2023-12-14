@@ -119,6 +119,13 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtUser](imgs/UML-Diagram-Class-JwtUser.jpg)
 
+17. Criar classe `JwrUserFactory`:
+- no pacote `api.security.jwt`;
+- com método `static JwtUser create(User user)`;
+- com método `static List<GrantedAuthority> mapToGrantedAuthorities(ProfileEnum profileEnum)`.
+
+![Image-UML-Diagram-Class-JwtUserFactory](imgs/UML-Diagram-Class-JwtUserFactory.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
