@@ -8,9 +8,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JwrUserFactory {
+public class JwtUserFactory {
 
-    private JwrUserFactory(){
+    private JwtUserFactory(){
     }
 
     public static JwtUser create(User user){
