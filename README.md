@@ -104,7 +104,12 @@ jwt contains user access data that must be stored somewhere
 to be shared between requests.
 
 15. Add jwt requirements for application security:
-- dependency `implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.3'` on `build.gradle`;
+- dependency on `build.gradle`:
+```
+implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+```
 - settings to `application.properties`:
 ```properties
 jwt.secret=helpDesk_leo
@@ -126,10 +131,22 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtUserFactory](imgs/UML-Diagram-Class-JwtUserFactory.jpg)
 
+18. Create `JwtTokenUtil` class:
+- implements `Serializable`;
+- with the attributes:
+  * `private static final long serialVersionUID = 1L`;
+  * `static final String CLAIM_KEY_USERNAME = "sub"`;
+  * `static final String CLAIM_KEY_CREATED = "create"`;
+  * `static final String CLAIM_KEY_EXPIRED = "exp"`;
+  * `private String secret`;
+  * `private Long expiration`.
+
+![Image-UML-Diagram-Class-JwtTokenUtil](imgs/UML-Diagram-Class-JwtTokenUtil.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
 https://www.udemy.com/course/angular-5-jwt-spring-rest/
 
-MVN Repository - JJWT :: API » 0.12.3:
-https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.12.3
+MVN Repository - JJWT :: API » 0.11.2:
+https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.11.2

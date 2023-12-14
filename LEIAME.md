@@ -104,7 +104,12 @@ o jwt contém os dados de acesso do usuário que devem ser armazenados em algum 
 para serem compartilhados entre as requisições.
 
 15. Adicionar requisitos do jwt para segurança da aplicação:
-- dependência `implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.3'` ao `build.gradle`.
+- dependência ao `build.gradle`:
+```
+implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+```
 - configurações ao `application.properties`:
 ```properties
 jwt.secret=helpDesk_leo
@@ -119,17 +124,29 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtUser](imgs/UML-Diagram-Class-JwtUser.jpg)
 
-17. Criar classe `JwrUserFactory`:
+17. Criar classe `JwtUserFactory`:
 - no pacote `api.security.jwt`;
 - com método `static JwtUser create(User user)`;
 - com método `static List<GrantedAuthority> mapToGrantedAuthorities(ProfileEnum profileEnum)`.
 
 ![Image-UML-Diagram-Class-JwtUserFactory](imgs/UML-Diagram-Class-JwtUserFactory.jpg)
 
+18. Criar classe `JwtTokenUtil`:
+- implementa `Serializable`;
+- com os atributos:
+  * `private static final long serialVersionUID = 1L`;
+  * `static final String CLAIM_KEY_USERNAME = "sub"`;
+  * `static final String CLAIM_KEY_CREATED = "create"`;
+  * `static final String CLAIM_KEY_EXPIRED = "exp"`;
+  * `private String secret`;
+  * `private Long expiration`.
+
+![Image-UML-Diagram-Class-JwtTokenUtil](imgs/UML-Diagram-Class-JwtTokenUtil.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
 https://www.udemy.com/course/angular-5-jwt-spring-rest/
 
-MVN Repository - JJWT :: API » 0.12.3:
-https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.12.3
+MVN Repository - JJWT :: API » 0.11.2:
+https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.11.2
