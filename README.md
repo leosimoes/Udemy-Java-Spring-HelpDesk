@@ -93,12 +93,28 @@ spring.data.mongodb.database=local
 
 ![Image-UML-Diagram-Interface-ChangeStatusRepository](imgs/UML-Diagram-Interface-ChangeStatusRepository.jpg)
 
-14. Add `UserService` interface and `UserServiceImpl` class
-- with methods `findByEmail`, `findById`, `createOrUpdate`, `delete`, `findAll`
+14. Add `UserService` interface and `UserServiceImpl` class:
+- in the `api.services` package;
+- with methods `findByEmail`, `findById`, `createOrUpdate`, `delete`, `findAll`.
 
 ![Image-UML-Diagram-Class-Interface-UserService](imgs/UML-Diagram-Class-Interface-UserService.jpg)
+
+Note: In stateless authentication (does not maintain states), which does not depend on session,
+jwt contains user access data that must be stored somewhere
+to be shared between requests.
+
+15. Add jwt requirements for application security:
+- dependency `implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.12.3'` on `build.gradle`;
+- settings to `application.properties`:
+```properties
+jwt.secret=helpDesk_leo
+jwt.expiration=604800
+```
 
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
 https://www.udemy.com/course/angular-5-jwt-spring-rest/
+
+MVN Repository - JJWT :: API » 0.12.3:
+https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.12.3
