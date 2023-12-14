@@ -111,6 +111,14 @@ jwt.secret=helpDesk_leo
 jwt.expiration=604800
 ```
 
+16. Criar classe `JwtUser`:
+- no pacote `api.security.jwt`;
+- implementa `UserDetais`;
+- com um atributo `static final long serialVersionUID = -7471177486146141709L`;
+- com outros atributos `id`, `username`, `password`, `autorities`.
+
+![Image-UML-Diagram-Class-JwtUser](imgs/UML-Diagram-Class-JwtUser.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
