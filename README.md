@@ -149,6 +149,12 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtUserDetailsServiceImpl](imgs/UML-Diagram-Class-JwtUserDetailsServiceImpl.jpg)
 
+20. Create `JwtAuthenticationEntryPoint` class:
+- implements `AuthenticationEntryPoint` and `Serializable`;
+- has a `private static final long serialVersionUID = 1L` attribute.
+
+![Image-UML-Diagram-Class-JwtAuthenticationEntryPoint](imgs/UML-Diagram-Class-JwtAuthenticationEntryPoint.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:

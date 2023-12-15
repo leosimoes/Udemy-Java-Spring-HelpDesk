@@ -144,10 +144,16 @@ jwt.expiration=604800
 ![Image-UML-Diagram-Class-JwtTokenUtil](imgs/UML-Diagram-Class-JwtTokenUtil.jpg)
 
 19. Criar classe `JwtUserDetailsServiceImpl`:
-- implementat `UserDetailsService`;
+- implementa `UserDetailsService`;
 - tem um atributo da classe `UserService`.
 
 ![Image-UML-Diagram-Class-JwtUserDetailsServiceImpl](imgs/UML-Diagram-Class-JwtUserDetailsServiceImpl.jpg)
+
+20. Criar classe `JwtAuthenticationEntryPoint`:
+- implementa `AuthenticationEntryPoint` e `Serializable`;
+- tem um atributo `private static final long serialVersionUID = 1L`.
+
+![Image-UML-Diagram-Class-JwtAuthenticationEntryPoint](imgs/UML-Diagram-Class-JwtAuthenticationEntryPoint.jpg)
 
 
 ## Referências
