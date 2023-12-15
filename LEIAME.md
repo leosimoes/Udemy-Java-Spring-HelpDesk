@@ -143,6 +143,12 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtTokenUtil](imgs/UML-Diagram-Class-JwtTokenUtil.jpg)
 
+19. Criar classe `JwtUserDetailsServiceImpl`:
+- implementat `UserDetailsService`;
+- tem um atributo da classe `UserService`.
+
+![Image-UML-Diagram-Class-JwtUserDetailsServiceImpl](imgs/UML-Diagram-Class-JwtUserDetailsServiceImpl.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
