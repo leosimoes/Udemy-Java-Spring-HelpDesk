@@ -139,7 +139,8 @@ jwt.expiration=604800
   * `static final String CLAIM_KEY_CREATED = "create"`;
   * `static final String CLAIM_KEY_EXPIRED = "exp"`;
   * `private String secret`;
-  * `private Long expiration`.
+  * `private Long expiration`;
+- anotada com `@Component`.
 
 ![Image-UML-Diagram-Class-JwtTokenUtil](imgs/UML-Diagram-Class-JwtTokenUtil.jpg)
 
@@ -154,6 +155,13 @@ jwt.expiration=604800
 - tem um atributo `private static final long serialVersionUID = 1L`.
 
 ![Image-UML-Diagram-Class-JwtAuthenticationEntryPoint](imgs/UML-Diagram-Class-JwtAuthenticationEntryPoint.jpg)
+
+21. Criar classe `JwtAuthenticationTokenFilter`:
+- extends `OncePerRequestFilter`;
+- tem atributos das classes `UserDetailsService` e `JwtTokenUtil`.
+- anotada com `@Component`. 
+
+![Image-UML-Diagram-Class-JwtAuthenticationTokenFilter](imgs/UML-Diagram-Class-JwtAuthenticationTokenFilter.jpg)
 
 
 ## Referências
