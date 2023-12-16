@@ -92,6 +92,10 @@ public class JwtTokenUtil implements Serializable {
                 .compact();
     }
 
+    public Boolean canTokenBeRefreshed(String token){
+        return (!this.isTokenExpired(token));
+    }
+
     public String refreshToken(String token) {
         String refreshedToken;
         try {
