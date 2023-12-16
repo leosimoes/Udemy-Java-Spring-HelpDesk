@@ -176,6 +176,13 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtAuthenticationRequest](imgs/UML-Diagram-Class-JwtAuthenticationRequest.jpg)
 
+24. Adicionar classe `CurrentUser`:
+- no pacote `api.security.models`;
+- com atributos `private String token`, `private User user`;
+- com o construtor padrão e construtor com parâmetros `String token`, `User user`.
+
+![Image-UML-Diagram-Class-CurrentUser](imgs/UML-Diagram-Class-CurrentUser.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
