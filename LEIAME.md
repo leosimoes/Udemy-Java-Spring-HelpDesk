@@ -191,6 +191,12 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-AuthenticationRestController](imgs/UML-Diagram-Class-AuthenticationRestController.jpg)
 
+26. Alterar classe `UdemyJavaSpringHelpDeskApplication`:
+- adicionar método `void initUsers(UserRepository userRepository, PasswordEncoder passwordEncoder)`;
+- adicionar método `CommandLineRunner init(UserRepository userRepository, PasswordEncoder passwordEncoder)` anotado com `@Bean`.
+
+![Image-UML-Diagram-Class-UdemyJavaSpringHelpDeskApplication](imgs/UML-Diagram-Class-UdemyJavaSpringHelpDeskApplication.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
