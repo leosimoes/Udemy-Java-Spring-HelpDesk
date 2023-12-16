@@ -163,6 +163,13 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-JwtAuthenticationTokenFilter](imgs/UML-Diagram-Class-JwtAuthenticationTokenFilter.jpg)
 
+22. Add `WebSecurityConfiguration` class:
+- with attributes of the classes `JwtAuthenticationEntryPoint`, `UserDetailsService`, `JwtAuthenticationTokenFilter`;
+- has the methods `protected SecurityFilterChain filterChain(HttpSecurity http)` and `public PasswordEncoder encoder()`.
+- annotated with `@Configuration` and `@EnableWebSecurity`.
+
+![Image-UML-Diagram-Class-WebSecurityConfiguration](imgs/UML-Diagram-Class-WebSecurityConfiguration.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
@@ -170,3 +177,6 @@ https://www.udemy.com/course/angular-5-jwt-spring-rest/
 
 MVN Repository - JJWT :: API » 0.11.2:
 https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.11.2
+
+Stack Overflow - Question 72381114:
+https://stackoverflow.com/questions/72381114/spring-security-upgrading-the-deprecated-websecurityconfigureradapter-in-spring
