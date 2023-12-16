@@ -170,6 +170,12 @@ jwt.expiration=604800
   
 ![Image-UML-Diagram-Class-WebSecurityConfiguration](imgs/UML-Diagram-Class-WebSecurityConfiguration.jpg)
 
+23. Adicionar classe `JwtAuthenticationRequest`:
+- com atributos `private static final long serialVersionUID = 1L`, `private String email`, `private String password`;
+- com o construtor padrão e construtor com parâmetros `String email`, `String password`.
+
+![Image-UML-Diagram-Class-JwtAuthenticationRequest](imgs/UML-Diagram-Class-JwtAuthenticationRequest.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
