@@ -183,6 +183,14 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-CurrentUser](imgs/UML-Diagram-Class-CurrentUser.jpg)
 
+25. Add `AuthenticationRestController` class:
+- in the `api.security.controllers` package;
+- with attributes of the classes `AuthenticationManager`, `JwtTokenUtil`, `UserDetailsService`, `UserService`;
+- with the constructor with all attributes as parameters;
+- annotated with `@RestController` and `@CrossOrigin(origins = "*")`.
+
+![Image-UML-Diagram-Class-AuthenticationRestController](imgs/UML-Diagram-Class-AuthenticationRestController.jpg)
+
 
 ## References
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
@@ -193,3 +201,6 @@ https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.11.2
 
 Stack Overflow - Question 72381114:
 https://stackoverflow.com/questions/72381114/spring-security-upgrading-the-deprecated-websecurityconfigureradapter-in-spring
+
+Alura - Fórum - 228994:
+https://cursos.alura.com.br/forum/topico-springboot-2-7-injetar-authenticationmanager-sem-o-websecurityconfigureradapter-228994
