@@ -197,6 +197,14 @@ jwt.expiration=604800
 
 ![Image-UML-Diagram-Class-UdemyJavaSpringHelpDeskApplication](imgs/UML-Diagram-Class-UdemyJavaSpringHelpDeskApplication.jpg)
 
+27. Adicionar classe `SimpleCORSFilter`:
+- no pacote `api.security.filters`;
+- implementa `Filter`;
+- com atributo `private final Log logger = LogFactory.getLog(this.getClass())`;
+- anotada com `@@Component` e `@Order(Ordered.HIGHEST_PRECEDENCE)`.
+
+![Image-UML-Diagram-Class-SimpleCORSFilter](imgs/UML-Diagram-Class-SimpleCORSFilter.jpg)
+
 
 ## Referências
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
@@ -210,3 +218,6 @@ https://stackoverflow.com/questions/72381114/spring-security-upgrading-the-depre
 
 Alura - Fórum - 228994:
 https://cursos.alura.com.br/forum/topico-springboot-2-7-injetar-authenticationmanager-sem-o-websecurityconfigureradapter-228994
+
+GitHub -  klayrocha - angular-spring-api:
+https://github.com/klayrocha/angular-spring-api/tree/master
