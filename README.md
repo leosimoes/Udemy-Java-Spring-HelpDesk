@@ -106,13 +106,13 @@ to be shared between requests.
 15. Add jwt requirements for application security:
 - dependency on `build.gradle`:
 ```
-implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
-runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
-runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
 ```
 - settings to `application.properties`:
 ```properties
-jwt.secret=helpDesk_leo
+jwt.secret=helpDeskLeo
 jwt.expiration=604800
 ```
 
@@ -210,8 +210,14 @@ jwt.expiration=604800
 Udemy - Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB - Francis Klay Rocha:
 https://www.udemy.com/course/angular-5-jwt-spring-rest/
 
-MVN Repository - JJWT :: API » 0.11.2:
-https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.11.2
+MVN Repository - JJWT :: API » 0.12.3:
+https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api/0.12.3
+
+MVN Repository - JJWT :: Impl » 0.12.3:
+https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl/0.12.3
+
+MVN Repository - JJWT :: Extensions :: Jackson » 0.12.3
+https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson/0.12.3
 
 Stack Overflow - Question 72381114:
 https://stackoverflow.com/questions/72381114/spring-security-upgrading-the-deprecated-websecurityconfigureradapter-in-spring
@@ -221,3 +227,9 @@ https://cursos.alura.com.br/forum/topico-springboot-2-7-injetar-authenticationma
 
 GitHub -  klayrocha - angular-spring-api:
 https://github.com/klayrocha/angular-spring-api/tree/master
+
+Java Doc - io.jsonwebtoken - jjwt-api - 0.12.3:
+https://javadoc.io/doc/io.jsonwebtoken/jjwt-api/latest/deprecated-list.html
+
+Apps developer blog - Add and validate custom claims in jwt
+https://www.appsdeveloperblog.com/add-and-validate-custom-claims-in-jwt/

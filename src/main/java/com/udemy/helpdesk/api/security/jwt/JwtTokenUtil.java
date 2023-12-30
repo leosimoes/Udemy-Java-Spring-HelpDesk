@@ -3,10 +3,14 @@ package com.udemy.helpdesk.api.security.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
+
+import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.SecretKey;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,25 +45,26 @@ public class JwtTokenUtil implements Serializable {
     }
 
     public Date getExpirationDateFromToken(String token) {
-        Date expiration;
+        Date expirationDate;
         try{
             final Claims claims = getClaimsFromToken(token);
-            expiration = claims.getExpiration();
+            expirationDate = claims.getExpiration();
         }catch (Exception e){
-            expiration = null;
+            expirationDate = null;
         }
-        return expiration;
+        return expirationDate;
     }
 
     private Claims getClaimsFromToken(String token) {
         Claims claims;
         try{
-            claims = Jwts
-                    .parserBuilder()
-                    .setSigningKey(secret)
+         claims = Jwts
+                    .parser()
+                    .verifyWith(this.getSignInKey())
                     .build()
-                    .parseClaimsJws(token)
-                    .getBody();
+                    .parseSignedClaims(token)
+                    .getPayload();
+
         } catch(Exception e){
             claims = null;
         }
@@ -84,11 +89,12 @@ public class JwtTokenUtil implements Serializable {
     private String doGenerateToken(Map<String, Object> claims) {
         final Date createdDate = (Date) claims.get(CLAIM_KEY_CREATED);
         final Date expirationDate = new Date(createdDate.getTime() + expiration * 1000);
+
         return Jwts
                 .builder()
-                .setClaims(claims)
-                .setExpiration(expirationDate)
-                .signWith(SignatureAlgorithm.HS512, secret)
+                .claims(claims)
+                .expiration(expirationDate)
+                .signWith(this.getSignInKey())
                 .compact();
     }
 
@@ -112,5 +118,9 @@ public class JwtTokenUtil implements Serializable {
         JwtUser user = (JwtUser) userDetails;
         final String username = getUsernameFromToken(token);
         return (username.equals(user.getUsername()) && !isTokenExpired(token));
+    }
+
+    private SecretKey getSignInKey() {
+        return Jwts.SIG.HS256.key().build();
     }
 }

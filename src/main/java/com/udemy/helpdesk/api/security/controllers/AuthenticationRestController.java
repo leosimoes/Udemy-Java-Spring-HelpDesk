@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class AuthenticationRestController {
 
     private AuthenticationManager authenticationManager;
@@ -56,11 +56,8 @@ public class AuthenticationRestController {
         final String token = jwtTokenUtil.generateToken(userDetails);
         final User user = userService.findByEmail(authenticationRequest.getEmail());
 
-        if(jwtTokenUtil.canTokenBeRefreshed(token)) {
-            String refreshedToken = jwtTokenUtil.refreshToken(token);
-            return ResponseEntity.ok(new CurrentUser(refreshedToken, user));
-        }
-        return ResponseEntity.badRequest().body(null);
+        user.setPassword(null);
+        return ResponseEntity.ok(new CurrentUser(token, user));
     }
 
     @PostMapping("/api/refresh/")
